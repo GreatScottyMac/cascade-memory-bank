@@ -57,7 +57,13 @@ The system maintains context through a `memory-bank/` directory containing four 
 2. **Regular Interactions**
    - Start sessions with simple greetings
    - Allow context building before complex tasks
-   - Review progress at session end
+   - End sessions with memory bank update
+
+3. **Ending Sessions**
+   - Type `update memory bank` or `UMB` to trigger update
+   - Cascade will process the entire chat history
+   - Memory bank files are updated with new context
+   - Changes are applied directly for efficiency
 
 ## ⚠️ Troubleshooting
 
