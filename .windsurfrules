@@ -6,7 +6,8 @@ session_initialization:
   priority: "immediate"
   required: true
   actions:
-    - "Initialize memory bank"
+    - "Read all files in memory-bank"
+    - "If memory-bank does not exist, create it and write core files"
     - "Load all context"
     - "Build relationship map"
   validation:
@@ -23,6 +24,10 @@ system_validation:
   periodic:
     - "Verify context consistency"
     - "Check file system access"
+
+# Note on Memory Bank Files
+# Cascade does not require user approval to edit memory bank files.
+# These files are primarily for Cascade's use, with user access as a secondary consideration.
 
 mode: all
 initialization_required: true  # Explicit requirement flag
