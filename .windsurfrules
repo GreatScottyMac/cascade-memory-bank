@@ -1,32 +1,134 @@
 mode: all
 instructions:
-  session_end:
-    triggers:
-      - "update memory bank"
-      - "UMB"
-    actions:
+  memory_bank:
+    initialization:
       sequence:
-        1: # Process Chat History
-           - Review entire session chat
-           - Extract key information
-           - Identify relevant updates
-        2: # Update Memory Bank Files
-           - Use replace_file_content for direct updates
-           - Update each core file as needed:
-             * activeContext.md: current state
-             * progress.md: work status
-             * decisionLog.md: new decisions
-             * productContext.md: if scope changed
-        3: # Verify Updates
-           - Check file integrity
-           - Validate content structure
-    file_operations:
-      method: "direct file updates"
-      tool: "replace_file_content"
-      notes:
-        - Do NOT use create_memory tool
-        - This is separate from Cascade's built-in memory
-        - Use direct updates for memory bank files
-        - Only use temp files for system config updates
+        1: # Find Memory Banks
+           - Use find_by_name: pattern="memory-bank/", max_depth=3
+           - Store all found locations
+        2: # Read Structure
+           - Use list_dir on each location
+           - Build file relationship map
+        3: # Read ALL Files
+           - Use view_file on EVERY file
+           - Order: core files first, then others
+           - No selective reading
+        4: # Build Context
+           - Process all contents
+           - Create cross-reference map
+           - Note missing/inconsistent items
+      verification:
+        - Track files found vs read
+        - Verify core files present
+        - Check reference completeness
+      error_handling:
+        - Log failed steps
+        - Document unread files
+        - Note context impact
 
-[... rest of file remains the same ...]
+    core_files:
+      activeContext.md:
+        purpose: "Track session state and goals"
+        sections: [objectives, decisions, questions, blockers]
+      productContext.md:
+        purpose: "Define project scope"
+        sections: [overview, components, organization, standards]
+      progress.md:
+        purpose: "Track work status"
+        sections: [completed, current, next, issues]
+      decisionLog.md:
+        purpose: "Record decisions"
+        sections: [technical, architecture, implementation, alternatives]
+
+    file_handling:
+      tools:
+        list_dir: "Get structure and relationships"
+        view_file: "Read and process contents"
+        write_to_file: "Create with templates"
+        replace_file_content: "Update preserving structure"
+      behaviors:
+        - Read ALL files at startup
+        - Build complete context
+        - Track dependencies
+        - Note inconsistencies
+
+  write_mode:
+    tools:
+      replace_file_content: "Update files"
+      write_to_file: "Create files"
+      run_command: "Execute code"
+      grep_search: "Find patterns"
+    behaviors:
+      - Update Memory Bank immediately
+      - Cross-reference changes
+      - Document comprehensively
+    completion:
+      - Present next steps
+      - Suggest updates
+      - Note blockers
+
+  chat_mode:
+    tools:
+      view_file: "Read contents"
+      list_dir: "Check structure"
+      grep_search: "Find patterns"
+      codebase_search: "Find code"
+    behaviors:
+      - Build full context
+      - Provide evidence
+      - Note improvements
+    completion:
+      - Suggest next steps
+      - Note doc needs
+      - Check clarity
+
+  general_rules:
+    file_reading:
+      - Use tools properly
+      - Build full context
+      - Note gaps
+    context:
+      - Process all files
+      - Cross-reference
+      - Track patterns
+    completion:
+      - Clear next steps
+      - Note blockers
+      - Suggest tasks
+
+  memory_updates:
+    write_mode:
+      - Preserve structure
+      - Update sections
+      - Maintain links
+    chat_mode:
+      - Track updates
+      - Note issues
+      - Suggest fixes
+
+  mode_switching:
+    write_to_chat:
+      when: [context needed, questions, research]
+      do: [note state, preserve context, plan]
+    chat_to_write:
+      when: [updates needed, implementation, gaps]
+      do: [summarize, list changes, set goals]
+
+  file_authority:
+    write_mode:
+      can: [create, update, change]
+      must: [maintain consistency, update refs]
+    chat_mode:
+      can: [read, find, identify]
+      must: [suggest, note needs]
+
+  error_handling:
+    missing_files:
+      - Note impact
+      - Guide creation
+    inconsistencies:
+      - Flag conflicts
+      - Suggest fixes
+    gaps:
+      - Document missing
+      - Prioritize updates
