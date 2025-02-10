@@ -6,3 +6,7 @@
 !/.gitignore
 !/README.md
 !/.windsurfrules
+!/CONTRIBUTING.md
+!/developer-primer.md
+!/.github
+!/.github/**

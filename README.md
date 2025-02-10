@@ -1,20 +1,22 @@
 # 🧠 Cascade Memory Bank
 
-A persistent memory system for Cascade, the agentic AI assistant in Windsurf IDE. Maintains deep project understanding across sessions through structured documentation and context tracking.
+Enhance your Windsurf IDE experience with persistent project memory. Cascade Memory Bank enables the Cascade AI assistant to maintain deep project understanding across sessions, automatically documenting important context, decisions, and progress.
+
+[View Developer's Guide](developer-primer.md) for detailed implementation information.
 
 ## 🚀 Quick Start
 
-1. Clone this repository:
+1. **Install**
    ```bash
    git clone https://github.com/GreatScottyMac/cascade-memory-bank.git
-   ```
-
-2. Copy the `.windsurfrules` file to your project root
-   ```bash
    cp cascade-memory-bank/.windsurfrules /path/to/your/project/
    ```
+   Or paste `.windsurfrules` contents into Windsurf's "Set Workspace AI Rules".
 
-   Or copy its contents and paste into "Set Workspace AI Rules" in Windsurf settings.
+2. **Start Using**
+   - Begin any conversation with Cascade
+   - Memory bank initializes automatically
+   - Project context builds naturally through your interactions
 
 ## 📁 Memory Bank Structure
 
@@ -29,49 +31,40 @@ The system maintains context through a `memory-bank/` directory containing four 
 | `progress.md` | Tracks work status and milestones | As tasks progress |
 | `decisionLog.md` | Records important decisions | When decisions made |
 
-## 🔄 How It Works
+## 🎯 Benefits
 
-1. **Initialization**
-   - On first interaction, Cascade creates the `memory-bank/` directory
-   - Generates core files with initial structure
-   - Establishes baseline project context
+- **Enhanced Productivity**
+  - No context loss between sessions
+  - Reduced onboarding time for new tasks
+  - Automatic documentation maintenance
 
-2. **During Sessions**
-   - Automatically reads and processes all Memory Bank files
-   - Updates context based on interactions
-   - Tracks progress and decisions
-   - Maintains cross-references between files
+- **Better Project Understanding**
+  - Comprehensive decision history
+  - Clear project evolution tracking
+  - Maintained architectural context
 
-3. **Between Sessions**
-   - Preserves knowledge across sessions
-   - Maintains consistent project understanding
-   - Provides continuity in development
+- **Reduced Cognitive Load**
+  - No manual note-taking needed
+  - Important context always available
+  - Natural conversation flow
 
-## 🛠️ Best Practices
+## 📘 Usage Tips
 
-1. **Let Cascade Manage the Memory Bank**
-   - Files are automatically created and updated
-   - Structure is maintained consistently
-   - Cross-references are handled automatically
+- **Just Chat Naturally**
+  - No special commands needed
+  - Context builds automatically
+  - Updates happen in real-time
 
-2. **Regular Interactions**
-   - Start sessions with simple greetings
-   - Allow context building before complex tasks
-   - End sessions with memory bank update
+- **Focus on Your Work**
+  - Documentation happens automatically
+  - Important context is preserved
+  - Project history maintains itself
 
-3. **Ending Sessions**
-   - Type `update memory bank` or `UMB` to trigger update
-   - Cascade will process the entire chat history
-   - Memory bank files are updated with new context
-   - Changes are applied directly for efficiency
+## 🔍 Need Help?
 
-## ⚠️ Troubleshooting
-
-If Cascade seems to lack context:
-1. Verify `memory-bank/` directory exists
-2. Check core files are present
-3. Ensure file permissions are correct
-4. Start a new session to rebuild context
+- [Read the Developer's Guide](developer-primer.md)
+- Check the troubleshooting section
+- Open an issue for support
 
 ## 📝 License
 
@@ -79,4 +72,8 @@ MIT License - See LICENSE file for details
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) first.
+
+## ❤️ Support the Project
+
+If you find Cascade Memory Bank valuable in your development workflow, consider [becoming a sponsor](https://github.com/sponsors/GreatScottyMac). Your support helps maintain and improve the project!

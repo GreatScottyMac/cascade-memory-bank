@@ -1,0 +1,228 @@
+# 🔬 Cascade Memory Bank: Developer's Primer
+
+## 📚 Overview
+
+The Cascade Memory Bank is an intelligent context management system that maintains project knowledge across sessions. It uses a structured approach to document, track, and evolve project context through carefully organized markdown files.
+
+## 🏗️ Architecture
+
+### Configuration Format
+
+The `.windsurfrules` file uses YAML format, specifically chosen for its advantages in AI-driven systems:
+
+- **AI-Optimized Structure**
+  - Clear hierarchical organization
+  - Consistent indentation-based nesting
+  - Explicit key-value relationships
+  - Efficient machine parsing
+
+- **Human-Friendly**
+  - Natural text-based format
+  - Easy manual review and editing
+  - Self-documenting structure
+  - Minimal syntax overhead
+
+- **Flexibility**
+  - Supports complex data structures
+  - Easy to extend and modify
+  - Maintains readability at scale
+  - Compatible with most tools
+
+### Core Components
+
+1. **Memory Bank Directory** (`memory-bank/`)
+   - Self-contained context storage
+   - Markdown-based for maximum compatibility
+   - Structured for easy parsing and updates
+
+2. **Core Files**
+   - `activeContext.md`: Session state and immediate goals
+   - `productContext.md`: Project scope and architectural decisions
+   - `progress.md`: Task status and milestone tracking
+   - `decisionLog.md`: Technical and architectural decisions
+
+### Interaction Handling
+
+The system intelligently filters interactions into two categories:
+
+1. **Project-Relevant**
+   - Code changes and implementation details
+   - Architecture and design decisions
+   - Configuration updates
+   - Documentation changes
+   - Task status updates
+
+2. **Non-Project**
+   - General knowledge questions
+   - Off-topic discussions
+   - Test queries
+   - Temporary debugging outputs
+
+### Update Protocol
+
+Updates follow a priority system:
+
+**High Priority**
+- Critical decisions
+- Blocking issues
+- Major code changes
+
+**Medium Priority**
+- Progress updates
+- New questions
+- Minor code changes
+
+**Low Priority**
+- Documentation improvements
+- Clarifications
+- Reference updates
+
+## 🔄 Operation Flow
+
+### Initialization
+1. Locate memory bank directory
+2. Read and validate core files
+3. Build relationship map
+4. Process all contents
+5. Create cross-references
+
+### Real-Time Updates
+1. Monitor project-relevant events
+2. Filter based on relevance
+3. Update appropriate files
+4. Maintain cross-references
+5. Preserve chronological order
+
+### Content Management
+- Direct file updates for efficiency
+- Structured section organization
+- Automatic cross-referencing
+- Timestamp-based tracking
+
+## 🛠️ Implementation Guide
+
+### Setting Up
+
+1. **Directory Structure**
+   ```
+   your-project/
+   ├── .windsurfrules
+   └── memory-bank/
+       ├── activeContext.md
+       ├── productContext.md
+       ├── progress.md
+       └── decisionLog.md
+   ```
+
+2. **Configuration**
+   - Copy `.windsurfrules` to project root
+   - Ensure proper file permissions
+   - Verify memory bank directory access
+
+### File Formats
+
+Each core file follows a specific structure:
+
+**activeContext.md**
+```markdown
+# Active Context
+
+## Current Objectives
+- [List of current goals]
+
+## Recent Decisions
+- [Recent key decisions]
+
+## Open Questions
+- [Current questions]
+
+## Current Blockers
+- [Active blockers]
+```
+
+**productContext.md**
+```markdown
+# Product Context
+
+## Overview
+[Project description]
+
+## Components
+- [Component list]
+
+## Organization
+[Structure details]
+
+## Standards
+- [Project standards]
+```
+
+Similar structured formats exist for other core files.
+
+## 🔍 Advanced Features
+
+### Context Evolution
+- Tracks project evolution over time
+- Maintains decision history
+- Documents architectural changes
+- Records implementation approaches
+
+### Cross-Referencing
+- Links related decisions
+- Connects implementation details
+- Tracks dependency relationships
+- Maps feature evolution
+
+### Error Handling
+- Detects missing files
+- Flags inconsistencies
+- Identifies documentation gaps
+- Suggests remediation steps
+
+## 🤝 Best Practices
+
+1. **Let the System Work**
+   - Avoid manual file edits
+   - Trust the priority system
+   - Allow natural context evolution
+
+2. **Clear Communication**
+   - Be explicit about decisions
+   - Document significant changes
+   - Note important discussions
+
+3. **Regular Maintenance**
+   - Review context periodically
+   - Clean up obsolete information
+   - Verify cross-references
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+1. **Missing Context**
+   - Verify file permissions
+   - Check file structure
+   - Review update history
+   - Rebuild if necessary
+
+2. **Inconsistent Updates**
+   - Check file access
+   - Verify tool permissions
+   - Review recent changes
+   - Reset if needed
+
+### Recovery Steps
+
+1. Backup existing memory bank
+2. Verify file permissions
+3. Rebuild context if necessary
+4. Restore critical information
+
+## 📈 Future Development
+
+Planned enhancements:
+- Enhanced cross-referencing
+- Improved context visualization
+- Better conflict resolution
+- Advanced search capabilities

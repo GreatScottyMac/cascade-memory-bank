@@ -1,6 +1,53 @@
 mode: all
 instructions:
   memory_bank:
+    real_time_updates:
+      notable_events:
+        project_related:
+          - Code changes to project files
+          - Architecture or design decisions
+          - Implementation approaches
+          - Bug discoveries or fixes
+          - New feature requests
+          - Project scope changes
+        system_related:
+          - Configuration updates
+          - Dependency changes
+          - Performance issues
+          - Security concerns
+        workflow_related:
+          - Task status changes
+          - Blocking issues
+          - Resource constraints
+          - Timeline updates
+        documentation_related:
+          - API changes
+          - Usage pattern updates
+          - Breaking changes
+          - Deprecation notices
+      excluded_events:
+        - General knowledge questions
+        - Off-topic discussions
+        - Temporary debugging outputs
+        - Test queries unrelated to project
+      actions:
+        - Update relevant core files immediately
+        - Cross-reference related information
+        - Maintain chronological order
+        - Preserve context and relationships
+      priority:
+        high:
+          - Critical decisions
+          - Blocking issues
+          - Major code changes
+        medium:
+          - Progress updates
+          - New questions
+          - Minor code changes
+        low:
+          - Documentation improvements
+          - Clarifications
+          - Reference updates
     initialization:
       sequence:
         1: # Find Memory Banks
@@ -52,35 +99,27 @@ instructions:
         - Track dependencies
         - Note inconsistencies
 
-  write_mode:
-    tools:
-      replace_file_content: "Update files"
-      write_to_file: "Create files"
-      run_command: "Execute code"
-      grep_search: "Find patterns"
-    behaviors:
-      - Update Memory Bank immediately
-      - Cross-reference changes
-      - Document comprehensively
-    completion:
-      - Present next steps
-      - Suggest updates
-      - Note blockers
-
-  chat_mode:
-    tools:
-      view_file: "Read contents"
-      list_dir: "Check structure"
-      grep_search: "Find patterns"
-      codebase_search: "Find code"
-    behaviors:
-      - Build full context
-      - Provide evidence
-      - Note improvements
-    completion:
-      - Suggest next steps
-      - Note doc needs
-      - Check clarity
+  tools_and_behaviors:
+    memory_bank_operations:
+      tools:
+        replace_file_content: "Update files"
+        write_to_file: "Create files"
+        view_file: "Read contents"
+        list_dir: "Check structure"
+        grep_search: "Find patterns"
+        codebase_search: "Find code"
+      behaviors:
+        - Monitor project-relevant events
+        - Update memory bank when appropriate
+        - Cross-reference related information
+        - Document with context and timestamps
+        - Track system evolution
+    general_operations:
+      behaviors:
+        - Provide accurate information
+        - Maintain project context awareness
+        - Filter non-project content
+        - Return to project focus when appropriate
 
   general_rules:
     file_reading:
@@ -102,17 +141,35 @@ instructions:
       - Update sections
       - Maintain links
     chat_mode:
-      - Track updates
-      - Note issues
-      - Suggest fixes
+      - Track updates in real-time
+      - Log notable events immediately
+      - Document context changes
+      - Note issues with timestamps
+      - Suggest fixes proactively
 
-  mode_switching:
-    write_to_chat:
-      when: [context needed, questions, research]
-      do: [note state, preserve context, plan]
-    chat_to_write:
-      when: [updates needed, implementation, gaps]
-      do: [summarize, list changes, set goals]
+  interaction_handling:
+    project_relevant:
+      indicators:
+        - Memory bank system changes needed
+        - Implementation work required
+        - Documentation updates needed
+        - Configuration changes required
+        - System state changes detected
+      actions:
+        - Update relevant memory bank files
+        - Document changes and decisions
+        - Maintain project context
+        - Cross-reference related information
+    non_project:
+      indicators:
+        - General knowledge questions
+        - Off-topic discussions
+        - Research queries unrelated to memory bank
+        - Clarification of non-project topics
+      actions:
+        - Provide requested information
+        - Do not update memory bank files
+        - Maintain focus on primary task when returning to project work
 
   file_authority:
     write_mode:
