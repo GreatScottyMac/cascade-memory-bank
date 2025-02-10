@@ -39,9 +39,9 @@ Enhance your Windsurf IDE experience with persistent project memory. Cascade Mem
    > **Note**: This repository version controls these files as it is the reference implementation.
 
 3. **Start Using**
-   - Begin any conversation with Cascade
-   - Memory bank initializes automatically
-   - Project context builds naturally through your interactions
+   - Begin by telling Cascade: "Follow the protocol in your .windsurfrules"
+   - Memory bank initializes and loads all context
+   - Project context updates automatically in real-time
 
 ## 📁 Memory Bank Structure
 
@@ -75,10 +75,10 @@ The system maintains context through a `memory-bank/` directory containing four 
 
 ## 📘 Usage Tips
 
-- **Just Chat Naturally**
-  - No special commands needed
-  - Context builds automatically
-  - Updates happen in real-time
+- **Real-Time Updates**
+  - Context updates happen automatically
+  - Changes are logged immediately
+  - Use "update memory bank" or "UMB" for manual updates if needed
 
 - **Focus on Your Work**
   - Documentation happens automatically

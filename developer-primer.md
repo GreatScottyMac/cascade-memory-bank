@@ -145,18 +145,28 @@ Updates follow a priority system:
 ## 🔄 Operation Flow
 
 ### Initialization
-1. Locate memory bank directory
-2. Read and validate core files
-3. Build relationship map
-4. Process all contents
-5. Create cross-references
+1. Start session with command: "Follow the protocol in your .windsurfrules"
+2. System locates memory bank directory
+3. Reads and validates core files
+4. Builds relationship map
+5. Processes all contents
+6. Creates cross-references
 
-### Real-Time Updates
-1. Monitor project-relevant events
+### Update Strategy
+
+#### Primary: Real-Time Updates
+1. Monitor project-relevant events continuously
 2. Filter based on relevance
-3. Update appropriate files
+3. Update appropriate files immediately
 4. Maintain cross-references
 5. Preserve chronological order
+
+#### Backup: Manual Updates
+The "update memory bank" (or "UMB") command can be used when needed:
+- End of significant work sessions
+- When explicitly requested
+- For bulk updates
+- As a verification step
 
 ### Content Management
 - Direct file updates for efficiency
