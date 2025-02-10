@@ -1,2 +1,8 @@
-memory-bank/
-projectBrief.md
+# Ignore everything
+*
+
+
+# Don't ignore these specific files
+!/.gitignore
+!/README.md
+!/.windsurfrules
