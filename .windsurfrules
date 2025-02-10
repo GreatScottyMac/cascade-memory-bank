@@ -1,4 +1,33 @@
+# Cascade Memory Bank System Rules
+
+# Initialization Protocol
+session_initialization:
+  trigger: "first_interaction"
+  priority: "immediate"
+  required: true
+  actions:
+    - "Initialize memory bank"
+    - "Load all context"
+    - "Build relationship map"
+  validation:
+    - "Verify memory bank exists"
+    - "Confirm all core files present"
+    - "Check file permissions"
+
+# System Validation
+system_validation:
+  startup:
+    - "Verify .windsurfrules loaded"
+    - "Check memory bank accessibility"
+    - "Confirm initialization complete"
+  periodic:
+    - "Verify context consistency"
+    - "Check file system access"
+
 mode: all
+initialization_required: true  # Explicit requirement flag
+initialization_timing: "immediate_after_first_contact"  # Timing specification
+
 instructions:
   memory_bank:
     real_time_updates:

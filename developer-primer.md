@@ -6,6 +6,26 @@ The Cascade Memory Bank is an intelligent context management system that maintai
 
 ## 🏗️ Architecture
 
+### Development Workflow
+
+The project follows a specific workflow for modifying AI rules:
+
+1. **Development Process**
+   - All changes to rules are made in `.windsurfrules-dev`
+   - This file serves as the development version
+   - Changes are tested and reviewed here
+   - Once approved, manually copied to `.windsurfrules`
+
+2. **File Purposes**
+   - `.windsurfrules`: Active system file read by Cascade
+   - `.windsurfrules-dev`: Development version for testing
+
+3. **Workflow Benefits**
+   - Prevents accidental system file modifications
+   - Allows testing without affecting active sessions
+   - Provides clear separation of development/production
+   - Maintains system stability
+
 ### Configuration Format
 
 The `.windsurfrules` file uses YAML format, specifically chosen for its advantages in AI-driven systems:
@@ -27,6 +47,51 @@ The `.windsurfrules` file uses YAML format, specifically chosen for its advantag
   - Easy to extend and modify
   - Maintains readability at scale
   - Compatible with most tools
+
+### Version Control Configuration
+
+#### Git Configuration Approaches
+
+1. **Recommended: Restrictive Default**
+   ```bash
+   # Ignore everything by default
+   *
+
+   # Then list what should be in version control
+   !/.gitignore
+   !/src/
+   !/src/**
+   !/package.json
+   # etc.
+   ```
+
+2. **Working with Cascade**
+   - Delete `*` line when starting a session
+   - This gives AI full file access
+   - Add `*` back before committing
+   - One-line toggle for AI access
+
+3. **Benefits**
+   - Simplest possible AI access management
+   - Clear version control boundaries
+   - Easy to switch between modes
+   - Prevents accidental commits
+
+4. **Alternative Approach**
+   ```bash
+   # Explicitly ignore Cascade files
+   .windsurfrules
+   memory-bank/
+   ```
+   - Comment/uncomment as needed
+   - More explicit but requires managing multiple lines
+
+#### This Repository
+
+As this repository is the Cascade Memory Bank project itself, it's an exception:
+- Version controls .windsurfrules and memory-bank/
+- Uses restrictive .gitignore with explicit allows
+- Serves as reference implementation
 
 ### Core Components
 

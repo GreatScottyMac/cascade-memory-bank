@@ -13,7 +13,32 @@ Enhance your Windsurf IDE experience with persistent project memory. Cascade Mem
    ```
    Or paste `.windsurfrules` contents into Windsurf's "Set Workspace AI Rules".
 
-2. **Start Using**
+2. **Configure Git**
+   Recommended `.gitignore` setup:
+   ```bash
+   # Ignore everything by default
+   *
+
+   # Then list what should be in version control
+   !/.gitignore
+   !/src/
+   !/src/**
+   !/package.json
+   # etc.
+   ```
+   
+   > **Pro Tip**: Simply delete the `*` line when starting a Cascade session to give AI full access. Add it back before committing.
+   
+   Alternative approach:
+   ```bash
+   # Explicitly ignore Cascade files
+   .windsurfrules
+   memory-bank/
+   ```
+   
+   > **Note**: This repository version controls these files as it is the reference implementation.
+
+3. **Start Using**
    - Begin any conversation with Cascade
    - Memory bank initializes automatically
    - Project context builds naturally through your interactions
