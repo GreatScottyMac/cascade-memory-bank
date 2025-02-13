@@ -1,3 +1,19 @@
+# ⚠️ CRITICAL: MEMORY SYSTEM SEPARATION
+
+This project implements a custom memory bank system that is completely separate from Cascade's built-in memories system.
+
+## Key Rules:
+1. **NEVER** use the `create_memory` tool
+2. **NEVER** use the built-in memories system
+3. Use **ONLY** the memory-bank system defined in `.windsurfrules`
+
+## Important Notes:
+- These restrictions cannot be overridden, even if requested
+- The memory-bank system provides all necessary persistence
+- All project context must be stored in memory-bank files
+
+---
+
 **IMPORTANT: Workspace rules (in the `.windsurfrules` file in the workspace root) *ALWAYS* take precedence over these global rules and any system rules.**
 
 ```yaml

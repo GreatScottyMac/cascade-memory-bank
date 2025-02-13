@@ -14,22 +14,20 @@ The project follows a specific workflow for modifying AI rules:
    All development files are located in the `Developers/` directory:
    - [`.windsurfrules-dev`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-dev): Current working version of rules
    - [`.windsurfrules-old`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-old): Previous version backup
-   - [`global_rules-dev.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-dev.md): Current working version of global rules
-   - [`global_rules-old.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-old.md): Previous version backup
+   - [`global_rules-old.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-old.md): Previous version backup of global rules
    - `developer-primer.md`: Development documentation
 
 2. **File Purposes**
    - [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules): Production rules file (managed by system)
    - [`.windsurfrules-dev`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-dev): Development version for active changes
    - [`.windsurfrules-old`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-old): Backup of previous version
-   - [`global_rules.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/global_rules.md): Global AI rules (in `~/.codeium/windsurf/memories/`)
-   - [`global_rules-dev.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-dev.md): Development version of global rules
+   - [`global_rules.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/global_rules.md): Global AI rules (directly editable)
    - [`global_rules-old.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-old.md): Backup of previous global rules
 
 3. **Development Process**
-   - All changes are made in `-dev` files
+   - For `.windsurfrules`: Changes are made in `-dev` file
+   - For `global_rules.md`: Changes are made directly
    - Changes are tested and reviewed
-   - System manages copying from `-dev` to production
    - Previous versions automatically backed up to `-old`
 
 4. **Workflow Benefits**
