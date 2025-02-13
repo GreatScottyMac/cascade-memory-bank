@@ -87,7 +87,7 @@ The system maintains context through a `memory-bank/` directory containing four 
 
 ## 🔍 Need Help?
 
-- [Read the Developer's Guide](developer-primer.md)
+- [Read the Developer's Guide](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/developer-primer.md)
 - Check the troubleshooting section
 - Open an issue for support
 
