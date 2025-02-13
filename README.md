@@ -7,41 +7,41 @@ Enhance your Windsurf IDE experience with persistent project memory. Cascade Mem
 ## 🚀 Quick Start
 
 1. **Install**
-   ```bash
-   git clone https://github.com/GreatScottyMac/cascade-memory-bank.git
-   cp cascade-memory-bank/.windsurfrules /path/to/your/project/
-   ```
-   Or paste `.windsurfrules` contents into Windsurf's "Set Workspace AI Rules".
+   Download or copy the contents of these files:
+   - [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules) - Copy to your project root or paste into Windsurf's "Set Workspace AI Rules"
+   - [`global_rules.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/global_rules.md) - Copy to `~/.codeium/windsurf/memories/` or paste into Windsurf's Settings - Set Global AI Rules
 
 2. **Configure Git**
-   Recommended `.gitignore` setup:
+   Important: If `memory-bank/` or `.windsurfrules` are gitignored, Cascade cannot see them. Use this recommended `.gitignore` setup for easy visibility toggling:
+
    ```bash
-   # Ignore everything by default
+   # Ignore everything by default - delete this line temporarily when working with Cascade
    *
 
-   # Then list what should be in version control
+   # Version control list - always keep these lines
    !/.gitignore
    !/src/
    !/src/**
    !/package.json
-   # etc.
+   !/README.md
+   !/docs/
+   !/docs/**
+   # Add more project files as needed
    ```
-   
-   > **Pro Tip**: Simply delete the `*` line when starting a Cascade session to give AI full access. Add it back before committing.
-   
-   Alternative approach:
-   ```bash
-   # Explicitly ignore Cascade files
-   .windsurfrules
-   memory-bank/
-   ```
-   
-   > **Note**: This repository version controls these files as it is the reference implementation.
+
+   **Usage:**
+   - When working with Cascade: Delete the `*` line
+   - Before committing: Add back the `*` line
+
+   This approach provides a quick way to toggle Cascade's visibility while maintaining a clear list of version-controlled files.
+
+   > **Note**: This repository version controls the memory bank files as it is the reference implementation.
 
 3. **Start Using**
    - Begin by telling Cascade: "Follow the protocol in your .windsurfrules"
    - Memory bank initializes and loads all context
    - Project context updates automatically in real-time
+   - Use "Update Memory Bank" or "UMB" trigger for manual updates (defined in `.windsurfrules`)
 
 ## 📁 Memory Bank Structure
 
