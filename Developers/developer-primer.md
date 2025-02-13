@@ -12,19 +12,19 @@ The project follows a specific workflow for modifying AI rules:
 
 1. **Development Files**
    All development files are located in the `Developers/` directory:
-   - `.windsurfrules-dev`: Current working version of rules
-   - `.windsurfrules-old`: Previous version backup
-   - `global_rules-dev.md`: Current working version of global rules
-   - `global_rules-old.md`: Previous version backup
+   - [`.windsurfrules-dev`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-dev): Current working version of rules
+   - [`.windsurfrules-old`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-old): Previous version backup
+   - [`global_rules-dev.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-dev.md): Current working version of global rules
+   - [`global_rules-old.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-old.md): Previous version backup
    - `developer-primer.md`: Development documentation
 
 2. **File Purposes**
-   - `.windsurfrules`: Production rules file (managed by system)
-   - `.windsurfrules-dev`: Development version for active changes
-   - `.windsurfrules-old`: Backup of previous version
-   - `global_rules.md`: Global AI rules (in `~/.codeium/windsurf/memories/`)
-   - `global_rules-dev.md`: Development version of global rules
-   - `global_rules-old.md`: Backup of previous global rules
+   - [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules): Production rules file (managed by system)
+   - [`.windsurfrules-dev`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-dev): Development version for active changes
+   - [`.windsurfrules-old`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/.windsurfrules-old): Backup of previous version
+   - [`global_rules.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/global_rules.md): Global AI rules (in `~/.codeium/windsurf/memories/`)
+   - [`global_rules-dev.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-dev.md): Development version of global rules
+   - [`global_rules-old.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/global_rules-old.md): Backup of previous global rules
 
 3. **Development Process**
    - All changes are made in `-dev` files
@@ -217,8 +217,8 @@ UMB Protocol Actions:
    ```
 
 2. **Configuration**
-   - Copy `.windsurfrules` to project root or paste in Windsurf's "Set Workspace AI Rules"
-   - Copy `global_rules.md` to `~/.codeium/windsurf/memories/` or paste in Windsurf's Settings - Set Global AI Rules
+   - Copy [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules) to project root or paste in Windsurf's "Set Workspace AI Rules"
+   - Copy [`global_rules.md`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/global_rules.md) to `~/.codeium/windsurf/memories/` or paste in Windsurf's Settings - Set Global AI Rules
    - Ensure proper file permissions
    - Verify memory bank directory access
 
