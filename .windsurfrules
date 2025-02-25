@@ -1,7 +1,6 @@
 # CRITICAL: MEMORY SYSTEM SEPARATION
 # This project implements its own memory bank system and DOES NOT use the built-in memories system.
 # DO NOT use the create_memory tool or any built-in memory features.
-# The memory-bank system (defined below) is the ONLY approved method for maintaining project context.
 # The user may override these rules, but only for a single and specific prompt.
 
 rule_priority:
@@ -18,13 +17,13 @@ memory_system_rules:
     This project maintains a clear separation between its memory-bank system and Cascade's built-in memories.
     This separation is crucial for proper operation and must be strictly maintained.
     The memory-bank system provides all necessary persistence through its core files.
-  secondary_system: "none"    
-  excluded_systems:          
+  secondary_system: "none"
+  excluded_systems:
     - name: "built-in-memories"
       tool: "create_memory"
       reason: "Project uses dedicated memory-bank system"
       override: "Only with explicit user request"
-  enforcement:              
+  enforcement:
     - "NEVER use create_memory tool for project context"
     - "ALL persistent information must use memory-bank files"
     - "Ignore built-in memory system completely"
@@ -53,6 +52,26 @@ memory_bank:
     build_complete_context: true
     track_dependencies: true
     note_inconsistencies: true
+
+  initialization_sequence:
+    - "Before doing ANYTHING else, read and fully internalize ALL rules in this file."
+    - "These rules are PARAMOUNT and MUST be followed without exception."
+    - "Check for Memory Bank: Use list_dir on path='/' to find 'memory-bank'."
+    - >-
+      If 'memory-bank' is found:
+        1. Verify Core Files: Check for the existence of activeContext.md, productContext.md, progress.md, and decisionLog.md within '/memory-bank'.
+        2. Read ALL Files: Use view_file to read ALL files in '/memory-bank' (core files first, then others), regardless of core file presence.
+        3. Handle Missing Core Files: If any core files are missing, create them in '/memory-bank'. Populate them with any relevant information available from the current session or through a search for a file named 'projectBrief.md'.
+    - >-
+      If 'memory-bank' is NOT found:
+        1. Create Directory: Create the directory '/memory-bank'.
+        2. Search for projectBrief.md:  Perform a comprehensive search of the file system for a file named 'projectBrief.md'.
+        3. Create Core Files: Create the four core files (activeContext.md, productContext.md, progress.md, and decisionLog.md) within '/memory-bank'.
+        4. Populate Core Files:
+           - If 'projectBrief.md' was found, use its content to populate 'productContext.md' with a high-level project outline.
+           - Populate the other core files with any other relevant information available from the current session.
+        5. Read ALL Files: Use view_file to read ALL files in '/memory-bank' (core files first, then others).
+    - "Build Context: Process contents of all files, create cross-reference map, note missing/inconsistent items"
 
   update_strategies:
     primary:
@@ -134,26 +153,6 @@ memory_bank:
     - "Cross-reference related information"
     - "Maintain chronological order"
     - "Preserve context and relationships"
-
-  initialization_sequence:
-    - "Before doing ANYTHING else, read and fully internalize ALL rules in this file."
-    - "These rules are PARAMOUNT and MUST be followed without exception."
-    - "Check for Memory Bank: Use list_dir on path='/' to find 'memory-bank'."
-    - >-
-      If 'memory-bank' is found:
-        1. Verify Core Files: Check for the existence of activeContext.md, productContext.md, progress.md, and decisionLog.md within '/memory-bank'.
-        2. Read ALL Files: Use view_file to read ALL files in '/memory-bank' (core files first, then others), regardless of core file presence.
-        3. Handle Missing Core Files: If any core files are missing, create them in '/memory-bank'. Populate them with any relevant information available from the current session or through a search for a file named 'projectBrief.md'.
-    - >-
-      If 'memory-bank' is NOT found:
-        1. Create Directory: Create the directory '/memory-bank'.
-        2. Search for projectBrief.md:  Perform a comprehensive search of the file system for a file named 'projectBrief.md'.
-        3. Create Core Files: Create the four core files (activeContext.md, productContext.md, progress.md, and decisionLog.md) within '/memory-bank'.
-        4. Populate Core Files:
-           - If 'projectBrief.md' was found, use its content to populate 'productContext.md' with a high-level project outline.
-           - Populate the other core files with any other relevant information available from the current session.
-        5. Read ALL Files: Use view_file to read ALL files in '/memory-bank' (core files first, then others).
-    - "Build Context: Process contents of all files, create cross-reference map, note missing/inconsistent items"
 
   verification:
     - "Track files found vs. read in '/memory-bank'"
