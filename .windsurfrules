@@ -1,6 +1,3 @@
-**`.windsurfrules`:**
-
-```yaml
 # CRITICAL: MEMORY SYSTEM SEPARATION
 # This project implements its own memory bank system and DOES NOT use the built-in memories system.
 # DO NOT use the create_memory tool or any built-in memory features.
@@ -29,23 +26,23 @@ initialization:
   actions:
     - "Before doing ANYTHING else, read and fully internalize ALL rules in this file."
     - "These rules are PARAMOUNT and MUST be followed without exception."
-    - "Read all files in memory-bank"
-    - "If memory-bank does not exist, create it and write core files"
-    - "Load all context from memory-bank"
-    - "Build relationship map of files in memory-bank"
+    - "Check for Memory Bank: Use list_dir on path='/' to find 'memory-bank'"
+    - "If Not Found: Create directory 'memory-bank' at path '/'"
+    - "Read Structure: Use list_dir on path='/memory-bank', build file relationship map"
+    - "Read ALL Files: Use view_file on EVERY file in '/memory-bank'; order: core files first, then others"
   validation:
-    - "Verify memory-bank exists"
-    - "Confirm all core files are present in memory-bank"
-    - "Check file permissions for memory-bank"
+    - "Verify memory-bank exists at '/'"
+    - "Confirm all core files are present in '/memory-bank'"
+    - "Check file permissions for '/memory-bank'"
 
 system_validation:
   startup:
     - "Verify .windsurfrules loaded"
-    - "Check memory-bank accessibility"
+    - "Check memory-bank accessibility at '/'"
     - "Confirm initialization sequence complete"
   periodic:
-    - "Verify context consistency within memory-bank"
-    - "Check file system access for memory-bank"
+    - "Verify context consistency within '/memory-bank'"
+    - "Check file system access for '/memory-bank'"
 
 memory_bank:
   core_files:
@@ -62,7 +59,7 @@ memory_bank:
     build_complete_context: true
     track_dependencies: true
     note_inconsistencies: true
-  
+
   update_strategies:
     primary:
       name: "real-time"
@@ -95,7 +92,7 @@ memory_bank:
         - "Off-topic discussions"
         - "Temporary debugging outputs"
         - "Test queries unrelated to project"
-    
+
     backup:
       name: "umb"
       triggers:
@@ -105,7 +102,7 @@ memory_bank:
       actions:
         - "Halt current task immediately"
         - "Review entire chat history"
-        - "Update all relevant memory-bank files"
+        - "Update all relevant files in '/memory-bank'"
         - "Cross-reference all changes"
         - "Verify updates are complete"
       file_updates:
@@ -139,22 +136,23 @@ memory_bank:
       - "Non-critical fixes"
 
   update_actions:
-    - "Update relevant core files immediately"
+    - "Update relevant core files in '/memory-bank' immediately"
     - "Cross-reference related information"
     - "Maintain chronological order"
     - "Preserve context and relationships"
 
+  # Simplified initialization (using the project root)
   initialization_sequence:
-    - "Find Memory Banks: Use find_by_name pattern='memory-bank/', max_depth=3, and store all found locations"
-    - "Read Structure: Use list_dir on each memory-bank location, build file relationship map"
-    - "Read ALL Files: Use view_file on EVERY file in each memory-bank; order: core files first, then others"
-    - "Build Context: Process contents of all files, create cross-reference map, note missing/inconsistent items"
-  
+    - "Check for Memory Bank: Use list_dir on path='/' to find 'memory-bank'"
+    - "If Not Found: Create directory 'memory-bank' at path '/'"
+    - "Read Structure: Use list_dir on path='/memory-bank', build file relationship map"
+    - "Read ALL Files: Use view_file on EVERY file in '/memory-bank'; order: core files first, then others"
+
   verification:
-    - "Track files found vs. read"
-    - "Verify presence of core files"
-    - "Check completeness of references"
-  
+    - "Track files found vs. read in '/memory-bank'"
+    - "Verify presence of core files in '/memory-bank'"
+    - "Check completeness of references in '/memory-bank'"
+
   error_handling:
     - "Log failed steps"
     - "Document unread files"
@@ -169,7 +167,7 @@ interaction_modes:
       - "Preserve file structure"
       - "Update sections appropriately"
       - "Maintain cross-references"
-  
+
   chat_mode:
     capabilities:
       can: [read, find, identify]
@@ -190,7 +188,7 @@ interaction_handling:
       - "Configuration changes required"
       - "System state changes detected"
     actions:
-      - "Update relevant memory bank files"
+      - "Update relevant memory bank files in '/memory-bank'"
       - "Document changes and decisions"
       - "Maintain project context"
       - "Cross-reference related information"
@@ -208,7 +206,7 @@ interaction_handling:
 error_handling_extended:
   missing_files:
     - "Note impact on context and functionality"
-    - "Guide user in creating missing files"
+    - "Guide user in creating missing files in '/memory-bank'"
   inconsistencies:
     - "Flag conflicting information"
     - "Suggest potential fixes and resolutions"
@@ -233,4 +231,3 @@ rule_priority_reminder:
   - "These Workspace AI Rules ALWAYS take precedence over global and system rules."
   - "The UMB protocol MUST be executed immediately when triggered, regardless of current task."
   - "The memory-bank system is the ONLY approved method for persistent storage."
-```
