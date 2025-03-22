@@ -1,14 +1,2 @@
-# Ignore everything
-*
-
-
-# Don't ignore these specific files
-!/.gitignore
-!/README.md
-!/.windsurfrules
-!/CONTRIBUTING.md
-!/.github
-!/.github/**
-!/global_rules.md
-!/Developers
-!/Developers/**
+projectBrief.md
+memory-bank/
