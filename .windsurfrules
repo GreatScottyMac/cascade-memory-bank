@@ -1,20 +1,6 @@
-# CRITICAL: MEMORY SYSTEM SEPARATION
-# This project implements its own memory bank system and DOES NOT use the built-in memories system.
-# DO NOT use the create_memory tool or any built-in memory features.
-# The memory-bank system (defined below) is the ONLY approved method for maintaining project context.
-rule_priority:
-  - description: "These Workspace AI Rules ALWAYS override any global or system rules."
-    precedence: "ABSOLUTE - These rules supersede all others."
 memory_system_rules:
   primary_system: "memory-bank"
-  restrictions:
-    - "NEVER use the create_memory tool"
-    - "NEVER use built-in memories system"
-    - "Use ONLY the memory-bank system defined here"
-  rationale: |
-    This project maintains a clear separation between its memory-bank system and Cascade's built-in memories.
-    This separation is crucial for proper operation and must be strictly maintained.
-    The memory-bank system provides all necessary persistence through its core files.
+  
 initialization:
   trigger: "first_interaction"
   priority: "immediate"
@@ -26,14 +12,17 @@ initialization:
     - "If memory-bank does NOT exist: Inform user. Ask to create and provide yes and no response choices. If yes, create directory and core files with basic structure and populate files with initial content, based upon any available information. If no, set status to [MEMORY BANK: INACTIVE]."
     - "Load context from memory-bank files if active."
     - "Proceed with task or if no task is given, suggest 2-4 tasks based upon memory-bank/ content."
+
   validation:
     - "Verify memory-bank status (ACTIVE/INACTIVE)."
     - "If ACTIVE, confirm core files were read."
+
 system_validation:
   startup:
     - "Verify .windsurfrules loaded"
     - "Check memory-bank accessibility if expected"
     - "Confirm initialization sequence complete"
+
 memory_bank:
   core_files:
     activeContext.md:
@@ -49,8 +38,10 @@ memory_bank:
   file_handling:
     read_all_at_startup: true # Implied by initialization actions
     build_complete_context: true # Implied by initialization actions
+
 general:
   status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
+
 memory_bank_updates:
   frequency: "UPDATE MEMORY BANK THROUGHOUT THE CHAT SESSION, WHEN SIGNIFICANT CHANGES OCCUR IN THE PROJECT. Use judgment to determine significance."
   decisionLog.md:
@@ -73,6 +64,7 @@ memory_bank_updates:
     trigger: "When a task begins, is completed, or its status changes."
     action: "Append the new entry using insert_content. Never overwrite. Include timestamp."
     format: "[YYYY-MM-DD HH:MM:SS] - [Summary of Progress Update]"
+
 umb: # Update Memory Bank command
   trigger: "^(Update Memory Bank|UMB)$"
   instructions:
@@ -83,8 +75,10 @@ umb: # Update Memory Bank command
       1. Current Session Review: Analyze chat history for relevant decisions, context changes, progress updates, clarifications etc.
       2. Comprehensive Updates: Update relevant memory bank files based on the review, following the rules defined in 'memory_bank_updates'.
       3. Memory Bank Synchronization: Ensure consistency across updated files.
+
   task_focus: "During UMB, focus ONLY on capturing information explicitly present in the *current chat session* (clarifications, decisions, progress). Do NOT summarize the entire project or perform actions outside this scope."
   cross_mode_updates: "Capture relevant information from the chat session irrespective of conceptual 'modes' mentioned, adding it to the appropriate Memory Bank files."
+  
   post_umb_actions:
     - "State: Memory Bank fully synchronized based on current chat session."
     - "State: Session context preserved for continuation."
