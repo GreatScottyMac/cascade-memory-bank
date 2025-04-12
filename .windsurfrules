@@ -25,6 +25,7 @@ initialization:
     - "If memory-bank exists: Read all core files (productContext.md, activeContext.md, systemPatterns.md, decisionLog.md, progress.md). Set status to [MEMORY BANK: ACTIVE]."
     - "If memory-bank does NOT exist: Inform user. Ask to create. If yes, create directory and core files with basic structure. If no, set status to [MEMORY BANK: INACTIVE]."
     - "Load context from memory-bank files if active."
+    - "Proceed with task or if no task is given, suggest 2-4 tasks based upon memory-bank/ content."
   validation:
     - "Verify memory-bank status (ACTIVE/INACTIVE)."
     - "If ACTIVE, confirm core files were read."

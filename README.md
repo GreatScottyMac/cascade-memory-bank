@@ -16,7 +16,7 @@ Download or copy the contents of these files:
 <br>
 
 **Start Using**
-   - Begin by telling Cascade: "Follow the protocol in your .windsurfrules"
+   - Begin by telling Cascade: "Follow the protocol in your rules" (you may also include the initial task)
    - Memory bank initializes and loads all context
    - Project context updates automatically in real-time
    - Use "Update Memory Bank" or "UMB" trigger for manual updates (defined in `.windsurfrules`)
