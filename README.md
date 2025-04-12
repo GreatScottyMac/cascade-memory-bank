@@ -12,11 +12,12 @@ Enhance your Windsurf IDE experience with persistent project memory. Cascade Mem
 * Optionally: Paste into "Add global rules"
 
     <img src="https://raw.githubusercontent.com/GreatScottyMac/cascade-memory-bank/main/cascade-memories-ui.png" alt="Prompt Settings Icon" width="300"/>
+
 <br>
 
 #### 2. Turn off "Auto-Generate Memories": [Ctrl + ,] - Configuration - Auto-Generate Memories
 
-<img src="https://raw.githubusercontent.com/GreatScottyMac/cascade-memory-bank/main/auto-generate_memories_off.png" alt="Prompt Settings Icon" width="300"/>
+   <img src="https://raw.githubusercontent.com/GreatScottyMac/cascade-memory-bank/main/auto-generate_memories_off.png" alt="Prompt Settings Icon" width="300"/>
 
 <br>
 
