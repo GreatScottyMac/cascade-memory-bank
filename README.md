@@ -8,11 +8,14 @@ Enhance your Windsurf IDE experience with persistent project memory. Cascade Mem
 
 **Install**
 Download or copy the contents of these files:
-- [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules) - Copy to your project root or paste into "Add workspace rules"
-- Optionally or Additionally: Paste into "Add global rules"
-<img src="https://raw.githubusercontent.com/GreatScottyMac/cascade-memory-bank/main/cascade-memories-ui.png" alt="Prompt Settings Icon" width="200"/>
+* [`.windsurfrules`](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/.windsurfrules) - Copy to your project root or paste into "Add workspace rules"
+* Optionally or Additionally: Paste into "Add global rules"
 
-3. **Start Using**
+    <img src="https://raw.githubusercontent.com/GreatScottyMac/cascade-memory-bank/main/cascade-memories-ui.png" alt="Prompt Settings Icon" width="300"/>
+
+<br>
+
+**Start Using**
    - Begin by telling Cascade: "Follow the protocol in your .windsurfrules"
    - Memory bank initializes and loads all context
    - Project context updates automatically in real-time
