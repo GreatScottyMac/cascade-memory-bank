@@ -2,8 +2,6 @@
 
 Enhance your Windsurf IDE experience with persistent project memory. Cascade Memory Bank enables the Cascade AI assistant to maintain deep project understanding across sessions, automatically documenting important context, decisions, and progress.
 
-[View Developer's Guide](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/developer-primer.md) for detailed implementation information.
-
 ## 🚀 Quick Start
 
 ### Install
@@ -68,12 +66,6 @@ The system maintains context through a `memory-bank/` directory containing four 
   - Documentation happens automatically
   - Important context is preserved
   - Project history maintains itself
-
-## 🔍 Need Help?
-
-- [Read the Developer's Guide](https://github.com/GreatScottyMac/cascade-memory-bank/blob/main/Developers/developer-primer.md)
-- Check the troubleshooting section
-- Open an issue for support
 
 ## 📝 License
 
